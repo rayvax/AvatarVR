@@ -316,6 +316,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294783146}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &301264613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7192818547691322734, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+  m_PrefabInstance: {fileID: 1948168991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &356039301
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6137da04b96b3a5458fac63522c5ac3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selector: {fileID: 1963024977}
+  _selector: {fileID: 1906272061}
   _renderer: {fileID: 592632478}
   _normalColor: {r: 1, g: 0, b: 0, a: 1}
   _selectColor: {r: 0, g: 1, b: 0, a: 1}
@@ -945,6 +950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 807497698}
+  - component: {fileID: 807497701}
   - component: {fileID: 807497700}
   m_Layer: 0
   m_Name: DVR Bunny Right
@@ -982,12 +988,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd9780be7e512049b4d33d5c9d0ac92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeState: {fileID: 1693300063}
---- !u!1 &835334136 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2588925041195329605, guid: 0e1b2ff3bedb5c0498180178216f13d0, type: 3}
-  m_PrefabInstance: {fileID: 1963024976}
+  _activeState: {fileID: 807497701}
+--- !u!114 &807497701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807497697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebd5da9a8bd22243b407f1927f4965b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activeStates:
+  - {fileID: 1693300063}
+  - {fileID: 1382780838}
+  _logicOperator: 1
 --- !u!1 &876673131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,9 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrObjects:
-  - {fileID: 1948168994}
-  - {fileID: 835334136}
-  - {fileID: 1382780832}
+  - {fileID: 301264613}
   desktopObjects:
   - {fileID: 1752041823}
 --- !u!4 &1600237323
@@ -1620,6 +1635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1906272059}
   - component: {fileID: 1906272060}
+  - component: {fileID: 1906272061}
   m_Layer: 0
   m_Name: DVR StopPose
   m_TagString: Untagged
@@ -1657,8 +1673,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeStates:
+  - {fileID: 1963024979}
   - {fileID: 1104728589}
   _logicOperator: 1
+--- !u!114 &1906272061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906272058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd9780be7e512049b4d33d5c9d0ac92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activeState: {fileID: 1906272060}
 --- !u!1001 &1948168991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,11 +1772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1948168994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5550776016039436609, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
-  m_PrefabInstance: {fileID: 1948168991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1963024976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1828,19 +1853,19 @@ PrefabInstance:
       objectReference: {fileID: 183299797}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1b2ff3bedb5c0498180178216f13d0, type: 3}
---- !u!114 &1963024977 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7906974645208042101, guid: 0e1b2ff3bedb5c0498180178216f13d0, type: 3}
-  m_PrefabInstance: {fileID: 1963024976}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835334136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd9780be7e512049b4d33d5c9d0ac92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1963024978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2588925041195329606, guid: 0e1b2ff3bedb5c0498180178216f13d0, type: 3}
   m_PrefabInstance: {fileID: 1963024976}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1963024979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2588925041195329607, guid: 0e1b2ff3bedb5c0498180178216f13d0, type: 3}
+  m_PrefabInstance: {fileID: 1963024976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebd5da9a8bd22243b407f1927f4965b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
