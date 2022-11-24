@@ -5094,7 +5094,7 @@ ParticleSystem:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5103,7 +5103,7 @@ ParticleSystem:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5632,7 +5632,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10
+    maxNumParticles: 1
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -10027,10 +10027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b232818755d59e4489b2d74edb2c0e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseXInputName: Mouse X
-  mouseYInputName: Mouse Y
-  mouseSensitivity: 150
-  playerBody: {fileID: 2346182618672636036}
 --- !u!20 &2346182617764956351
 Camera:
   m_ObjectHideFlags: 0
@@ -10120,9 +10116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8decf0f1ddf210d45b3a28656cf18716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInputName: Horizontal
-  verticalInputName: Vertical
-  movementSpeed: 2
 --- !u!1 &2346182618672636043
 GameObject:
   m_ObjectHideFlags: 0
@@ -10154,6 +10147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0e64c3c02b25f44914680bd6d4dd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveLeft: 0
   fireball: {fileID: 529887927}
   speed: 200
