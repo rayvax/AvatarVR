@@ -9,7 +9,7 @@ public class PlayerShooter : MonoBehaviour
 
   [Header("Fireball")]
   [SerializeField] private Fireball _fireballPrefab;
-  [SerializeField] private Transform _fireballCreationPosition;
+  [SerializeField] private Transform _fireballShootingPosition;
   [SerializeField] private Transform _fireballParent;
 
   private Fireball _currentFireball = null;
@@ -36,7 +36,7 @@ public class PlayerShooter : MonoBehaviour
 
     _currentFireball = Instantiate(
       _fireballPrefab,
-      _fireballCreationPosition.position,
+      _fireballShootingPosition.position,
       Quaternion.identity,
       _fireballParent);
   }
@@ -54,7 +54,7 @@ public class PlayerShooter : MonoBehaviour
     if (!_currentFireball) return;
 
     _currentFireball.transform.parent = null;
-    _currentFireball.Shoot(Camera.main.transform.forward);
+    _currentFireball.Shoot(_fireballShootingPosition.forward);
     _currentFireball = null;
   }
 }
