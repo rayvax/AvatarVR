@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Skybox1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/SampleScene 1.unity
+    guid: 445b87e373a86ce4ebfa1d4a73a16145
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 178d573fa8cce494f951d29b00ba4087, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: f82dbd12700653e40b8f15af7b02e0b4, type: 2}
