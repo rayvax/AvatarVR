@@ -21,10 +21,6 @@ public class PlayerShooter : MonoBehaviour
   {
     _fireballShootingPosition = _fireballShootingPositionDispenser.DispenseComponent<Transform>();
     _fireballParent = _fireballParentDispenser.DispenseComponent<Transform>();
-
-    Debug.Log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    Debug.Log(_fireballShootingPosition.name + " " + _fireballParent.name);
-    Debug.Log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
   }
 
   private void OnEnable()

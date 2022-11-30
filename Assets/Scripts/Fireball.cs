@@ -23,6 +23,15 @@ public class Fireball : MonoBehaviour
     }
   }
 
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.TryGetComponent<Lantern>(out Lantern lantern))
+    {
+      lantern.Light();
+      Die();
+    }
+  }
+
   private void Fly(float deltaTime)
   {
     var newPosition = transform.position + _flyDirection * _flySpeed * deltaTime;
@@ -33,5 +42,10 @@ public class Fireball : MonoBehaviour
   {
     _isShooted = true;
     _flyDirection = direction.normalized;
+  }
+
+  private void Die()
+  {
+    Destroy(gameObject);
   }
 }
