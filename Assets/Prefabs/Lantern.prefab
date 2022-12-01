@@ -94,9 +94,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 622373152313366289}
-  - component: {fileID: 622373152313366288}
   - component: {fileID: 622373152313366295}
   - component: {fileID: 622373152313366294}
+  - component: {fileID: 622373152313366288}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -120,20 +120,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &622373152313366288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622373152313366291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c2b7018aa633e94fa1ae73ab18bbf0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 622373151978561652}
-  _litSpeed: 3
 --- !u!136 &622373152313366295
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -161,3 +147,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.32
   m_Center: {x: 0, y: 1.89, z: 0}
+--- !u!114 &622373152313366288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622373152313366291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2b7018aa633e94fa1ae73ab18bbf0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 622373151978561652}
+  _defaultFlySpeed: 0.5
+  _defaultFlyDirection: {x: 0, y: -1, z: 0}
+  _litSpeed: 3
+  _litFlyDirection: {x: 0, y: 1, z: 0}
