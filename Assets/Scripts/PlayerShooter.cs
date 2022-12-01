@@ -26,7 +26,7 @@ public class PlayerShooter : MonoBehaviour
   private void OnEnable()
   {
     _fireballAppearPose.WhenSelected += CreateFireball;
-    _fireballAppearPose.WhenUnselected += DestroyCurrentFireball;
+    // _fireballAppearPose.WhenUnselected += DestroyCurrentFireball;
 
     _shootPose.WhenSelected += ShootFireball;
   }
@@ -34,7 +34,7 @@ public class PlayerShooter : MonoBehaviour
   private void OnDisable()
   {
     _fireballAppearPose.WhenSelected -= CreateFireball;
-    _fireballAppearPose.WhenUnselected -= DestroyCurrentFireball;
+    // _fireballAppearPose.WhenUnselected -= DestroyCurrentFireball;
 
     _shootPose.WhenSelected -= ShootFireball;
   }
