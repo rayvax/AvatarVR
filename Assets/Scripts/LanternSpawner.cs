@@ -35,8 +35,14 @@ public class LanternSpawner : MonoBehaviour
 
   private void SpawnLantern()
   {
-    Vector3 toCircleVector = (Random.Range(-1f, 1f) * Vector3.forward + Random.Range(-1f, 1f) * Vector3.right) * _spawnCircleRadius;
-    Vector3 lanternPosition = transform.position + toCircleVector;
+    // Vector3 toCircleVector = (Random.Range(-1f, 1f) * Vector3.forward + Random.Range(-1f, 1f) * Vector3.right) * _spawnCircleRadius;
+    float randomAngle = Random.Range(0, 2f);
+    float cs = Mathf.Cos(randomAngle);
+    float sn = Mathf.Sin(randomAngle);
+
+    Vector2 toCircleVector = Random.insideUnitCircle.normalized * _spawnCircleRadius;
+    Vector3 lanternPosition = transform.position
+                              + new Vector3(toCircleVector.x, 0, toCircleVector.y);
 
     Instantiate(_lanternPrefab, lanternPosition, Quaternion.identity, _lanternsParent);
   }
