@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
   private void Start()
   {
     SetCurrentHealth(_maxHealthPoint);
+    SetCurrentPointsCount(0);
   }
 
   public void LoseHealthPoint()
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
   {
     SetCurrentPointsCount(_currentPointsCount + 1);
 
-    if (_currentPointsCount >= _maxHealthPoint)
+    if (_currentPointsCount >= _pointsToWin)
       Won?.Invoke();
   }
 
