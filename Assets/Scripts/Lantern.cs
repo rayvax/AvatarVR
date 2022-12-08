@@ -34,6 +34,11 @@ public class Lantern : MonoBehaviour
     _currentFlyDirection = _litFlyDirection;
   }
 
+  public void Break()
+  {
+    Destroy(gameObject);
+  }
+
   private void Fly(float deltaTime)
   {
     var newPosition = transform.position + _currentFlyDirection * _currentFlySpeed * deltaTime;
