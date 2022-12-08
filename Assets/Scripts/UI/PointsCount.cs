@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class HealthCounter : MonoBehaviour
+public class PointsCount : MonoBehaviour
 {
   private TMP_Text _textComponent;
 
@@ -14,10 +14,10 @@ public class HealthCounter : MonoBehaviour
 
   private void Start()
   {
-    Player.Instance.HealthChanged += OnHealthChanged;
+    Player.Instance.PointsCountChanged += OnPointsCountChanged;
   }
 
-  private void OnHealthChanged(int value)
+  private void OnPointsCountChanged(int value)
   {
     _textComponent.text = value.ToString();
   }
