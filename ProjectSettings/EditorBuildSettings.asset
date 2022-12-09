@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Skybox1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
     path: Assets/Scenes/Test Avatar gameplay.unity
     guid: 445b87e373a86ce4ebfa1d4a73a16145
   m_configObjects:

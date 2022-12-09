@@ -11,16 +11,21 @@ public class PlayerShooter : MonoBehaviour
   [SerializeField] private Fireball _fireballPrefab;
   [SerializeField] private ActiveComponentDispenser _fireballShootingPositionDispenser;
   [SerializeField] private ActiveComponentDispenser _fireballParentDispenser;
+  [SerializeField] private ActiveComponentDispenser _fireballShootingDirectionDispenser;
 
   private Transform _fireballShootingPosition;
   private Transform _fireballParent;
+  private Transform _fireballShootingDirection;
 
   private Fireball _currentFireball = null;
 
   private void Start()
   {
-    _fireballShootingPosition = _fireballShootingPositionDispenser.DispenseComponent<Transform>();
+    _fireballShootingPosition
+          = _fireballShootingPositionDispenser.DispenseComponent<Transform>();
     _fireballParent = _fireballParentDispenser.DispenseComponent<Transform>();
+    _fireballShootingDirection
+          = _fireballShootingDirectionDispenser.DispenseComponent<Transform>();
   }
 
   private void OnEnable()
@@ -63,7 +68,7 @@ public class PlayerShooter : MonoBehaviour
     if (!_currentFireball) return;
 
     _currentFireball.transform.parent = null;
-    _currentFireball.Shoot(_fireballShootingPosition.forward);
+    _currentFireball.Shoot(_fireballShootingDirection.forward);
     _currentFireball = null;
   }
 }
