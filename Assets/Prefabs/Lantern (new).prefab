@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2b7018aa633e94fa1ae73ab18bbf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 0}
+  _meshRenderer: {fileID: 6496124136541180888}
   _defaultFlySpeed: 0.5
   _defaultFlyDirection: {x: 0, y: -1, z: 0}
   _litSpeed: 3
@@ -208,5 +208,10 @@ PrefabInstance:
 --- !u!4 &3583734364017424768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8db3428914871e42aa948d9501e3714, type: 3}
+  m_PrefabInstance: {fileID: 3904975022051237483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6496124136541180888 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7788866068789054899, guid: a8db3428914871e42aa948d9501e3714, type: 3}
   m_PrefabInstance: {fileID: 3904975022051237483}
   m_PrefabAsset: {fileID: 0}
