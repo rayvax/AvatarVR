@@ -12,6 +12,7 @@ public class Lantern : MonoBehaviour
   [SerializeField] private float _litSpeed = 3;
   [SerializeField] private Vector3 _litFlyDirection = Vector3.up;
 
+  private bool _canFly = true;
   private bool _isLit = false;
   private float _currentFlySpeed;
   private Vector3 _currentFlyDirection;
@@ -24,6 +25,8 @@ public class Lantern : MonoBehaviour
 
   private void Update()
   {
+    if (!_canFly) return;
+
     Fly(Time.deltaTime);
   }
 
@@ -49,5 +52,10 @@ public class Lantern : MonoBehaviour
   {
     var newPosition = transform.position + _currentFlyDirection * _currentFlySpeed * deltaTime;
     gameObject.transform.position = newPosition;
+  }
+
+  public void Stop()
+  {
+    _canFly = false;
   }
 }

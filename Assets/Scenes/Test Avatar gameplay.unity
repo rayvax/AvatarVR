@@ -5166,6 +5166,7 @@ MonoBehaviour:
   _maxHealthPoint: 100
   _pointsToWin: 10
   _restartGamePose: {fileID: 619981752}
+  _lanternSpawner: {fileID: 1871935505}
 --- !u!114 &1915573045
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class LanternSpawner : MonoBehaviour
   private float _elapsedTime;
   private bool _needSpawn = false;
 
+  private List<Lantern> _spawnedLanterns = new List<Lantern>();
+
   private void Update()
   {
     if (!_needSpawn) return;
@@ -33,9 +35,19 @@ public class LanternSpawner : MonoBehaviour
     _needSpawn = value;
   }
 
+  public void StopSpawnedLanterns()
+  {
+    foreach (var lantern in _spawnedLanterns)
+    {
+      if (lantern)
+      {
+        lantern.Stop();
+      }
+    }
+  }
+
   private void SpawnLantern()
   {
-    // Vector3 toCircleVector = (Random.Range(-1f, 1f) * Vector3.forward + Random.Range(-1f, 1f) * Vector3.right) * _spawnCircleRadius;
     float randomAngle = Random.Range(0, 2f);
     float cs = Mathf.Cos(randomAngle);
     float sn = Mathf.Sin(randomAngle);
@@ -44,6 +56,8 @@ public class LanternSpawner : MonoBehaviour
     Vector3 lanternPosition = transform.position
                               + new Vector3(toCircleVector.x, 0, toCircleVector.y);
 
-    Instantiate(_lanternPrefab, lanternPosition, Quaternion.identity, _lanternsParent);
+    var lantern = Instantiate(_lanternPrefab, lanternPosition, Quaternion.identity, _lanternsParent);
+
+    _spawnedLanterns.Add(lantern);
   }
 }
