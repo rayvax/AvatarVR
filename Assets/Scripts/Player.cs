@@ -1,10 +1,13 @@
+using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
   [SerializeField] private int _maxHealthPoint = 3;
   [SerializeField] private int _pointsToWin = 10;
+  [SerializeField] private ActiveStateSelector _restartGamePose;
 
   public static Player Instance => _instance;
 
@@ -20,6 +23,8 @@ public class Player : MonoBehaviour
 
   private PlayerShooter[] _playerShooters;
 
+  private bool _ableToRestart = false;
+
   private void Awake()
   {
     _playerShooters = GetComponents<PlayerShooter>();
@@ -28,6 +33,12 @@ public class Player : MonoBehaviour
   private void OnEnable()
   {
     InitSingleton();
+    _restartGamePose.WhenSelected += RestartGame;
+  }
+
+  private void OnDisable()
+  {
+    _restartGamePose.WhenSelected -= RestartGame;
   }
 
   private void Start()
@@ -43,6 +54,7 @@ public class Player : MonoBehaviour
     if (_currentHealth <= 0)
     {
       DisableAllShooting();
+      _ableToRestart = true;
       Died?.Invoke();
     }
   }
@@ -54,6 +66,7 @@ public class Player : MonoBehaviour
     if (_currentPointsCount >= _pointsToWin)
     {
       DisableAllShooting();
+      _ableToRestart = true;
       Won?.Invoke();
     }
   }
@@ -68,8 +81,6 @@ public class Player : MonoBehaviour
     {
       Destroy(gameObject);
     }
-
-    DontDestroyOnLoad(gameObject);
   }
 
   private void SetCurrentHealth(int value)
@@ -88,5 +99,12 @@ public class Player : MonoBehaviour
   {
     foreach (var shooter in _playerShooters)
       shooter.DisableShooting();
+  }
+
+  private void RestartGame()
+  {
+    if (!_ableToRestart) return;
+
+    SceneManager.LoadScene(0);
   }
 }
