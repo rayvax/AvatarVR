@@ -13,7 +13,7 @@ public class LanternSpawner : MonoBehaviour
   [SerializeField] private float _spawnCircleRadius = 1;
 
   private float _elapsedTime;
-  private bool _needSpawn = true;
+  private bool _needSpawn = false;
 
   private void Update()
   {
