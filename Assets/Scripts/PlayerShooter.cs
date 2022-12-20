@@ -20,6 +20,7 @@ public class PlayerShooter : MonoBehaviour
   private Transform _fireballShootingDirection;
 
   private bool _isFireballReady = false;
+  private bool _canShoot = true;
 
   private void Start()
   {
@@ -43,9 +44,15 @@ public class PlayerShooter : MonoBehaviour
     _fireballAppearPose.WhenUnselected -= ShootFireball;
   }
 
+  public void DisableShooting()
+  {
+    _canShoot = false;
+    _fireballReadyEffect.Stop();
+  }
+
   private void PrepareFireball()
   {
-    if (_fireballReadyEffect.isPlaying) return;
+    if (!_canShoot || _fireballReadyEffect.isPlaying) return;
 
     _fireballReadyEffect.Play();
 
@@ -53,7 +60,7 @@ public class PlayerShooter : MonoBehaviour
 
   private void ShootFireball()
   {
-    if (!_fireballReadyEffect.isPlaying) return;
+    if (!_canShoot || !_fireballReadyEffect.isPlaying) return;
 
     _fireballReadyEffect.Stop();
 

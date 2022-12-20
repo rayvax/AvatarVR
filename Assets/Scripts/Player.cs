@@ -18,6 +18,13 @@ public class Player : MonoBehaviour
   private int _currentPointsCount;
   private static Player _instance;
 
+  private PlayerShooter[] _playerShooters;
+
+  private void Awake()
+  {
+    _playerShooters = GetComponents<PlayerShooter>();
+  }
+
   private void OnEnable()
   {
     InitSingleton();
@@ -34,7 +41,10 @@ public class Player : MonoBehaviour
     SetCurrentHealth(_currentHealth - 1);
 
     if (_currentHealth <= 0)
+    {
+      DisableAllShooting();
       Died?.Invoke();
+    }
   }
 
   public void IncreasePoint()
@@ -42,7 +52,10 @@ public class Player : MonoBehaviour
     SetCurrentPointsCount(_currentPointsCount + 1);
 
     if (_currentPointsCount >= _pointsToWin)
+    {
+      DisableAllShooting();
       Won?.Invoke();
+    }
   }
 
   private void InitSingleton()
@@ -69,5 +82,11 @@ public class Player : MonoBehaviour
   {
     _currentPointsCount = value;
     PointsCountChanged?.Invoke(_currentPointsCount);
+  }
+
+  private void DisableAllShooting()
+  {
+    foreach (var shooter in _playerShooters)
+      shooter.DisableShooting();
   }
 }

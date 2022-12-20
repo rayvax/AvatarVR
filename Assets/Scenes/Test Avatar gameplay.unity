@@ -4782,7 +4782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lanternPrefab: {fileID: 5814070393316282114, guid: 3ffd62796ba96544fbb01b279195f90e, type: 3}
   _lanternsParent: {fileID: 1175736990}
-  _spawnPeriod: 3
+  _spawnPeriod: 0.1
   _spawnCircleRadius: 6
 --- !u!4 &1871935506
 Transform:
