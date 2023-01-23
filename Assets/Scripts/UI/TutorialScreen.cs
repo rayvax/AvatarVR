@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Oculus.Interaction;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TutorialScreen : MonoBehaviour
 {
@@ -11,8 +12,17 @@ public class TutorialScreen : MonoBehaviour
 
   [SerializeField] private LanternSpawner _lanternSpawner;
 
+  public event UnityAction Started;
+  public event UnityAction DismissEnded;
+
   private float _elapsedTime = 0;
   private bool _needDismiss = false;
+
+
+  private void Start()
+  {
+    Started?.Invoke();
+  }
 
   private void OnEnable()
   {
@@ -35,6 +45,7 @@ public class TutorialScreen : MonoBehaviour
         _needDismiss = false;
         _lanternSpawner.SetNeedSpawn(true);
         gameObject.SetActive(false);
+        DismissEnded?.Invoke();
       }
     }
   }
