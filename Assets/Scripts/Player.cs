@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
   private PlayerShooter[] _playerShooters;
 
-  private bool _ableToRestart = false;
+  private bool _gameEnded = false;
 
   private void Awake()
   {
@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
 
   public void LoseHealthPoint()
   {
+    if (_gameEnded) return;
+
     SetCurrentHealth(_currentHealth - 1);
 
     if (_currentHealth <= 0)
@@ -61,6 +63,8 @@ public class Player : MonoBehaviour
 
   public void IncreasePoint()
   {
+    if (_gameEnded) return;
+
     SetCurrentPointsCount(_currentPointsCount + 1);
 
     if (_currentPointsCount >= _pointsToWin)
@@ -107,12 +111,12 @@ public class Player : MonoBehaviour
     _lanternSpawner.StopSpawnedLanterns();
     _lanternSpawner.SetNeedSpawn(false);
 
-    _ableToRestart = true;
+    _gameEnded = true;
   }
 
   private void RestartGame()
   {
-    if (!_ableToRestart) return;
+    if (!_gameEnded) return;
 
     SceneManager.LoadScene(0);
   }
